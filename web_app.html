@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+		<title>EXPLR Course Finder</title>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script type="text/javascript" src="course-finder.js"></script>
+
+		<style>
+		@import url(https://fonts.googleapis.com/css?family=Lobster|Pacifico);
+
+
+		#header {
+			font-family: 'Lobster', cursive;
+			font-weight: 400;
+			background-color: black;
+			color: white;
+			text-align: center;
+			padding:5px;
+		}
+
+		#input {
+			resize: none;
+		}
+
+		#input_area {
+			padding-top: 40px;
+
+		}
+
+		#button {
+			background-color: white;
+			color: black;
+			border: 2px solid #4CAF50;
+			padding: 16px 32px;
+			text-align: center;
+			display: inline-block;
+			font-size: 20px;
+			margin: 4px 2px;
+			-webkit-transition-duration: 0.5s;
+			transition-duration: 0.5s;
+			cursor: pointer;
+		}
+
+		#button:hover{
+			background-color: #4CAF50;
+			color: white;
+		}
+
+		a.important {
+			color: green;
+		}
+
+		.line{
+			width: 33%;
+			float: left;
+		}		
+
+		</style>
+
+	</head>
+
+	<body>
+
+		<div id="header">
+			<h1>EXPLR Course Finder</h1>
+		</div>
+
+		<div id="input_area" class="line">
+			<p> Enter the courses you have taken using spaces to seperate them </p>
+			<textarea id="input" cols="54" rows="20" placeholder="MAT135 MAT136 MAT137 ..."></textarea>
+		</div>
+
+		<button id="button" onclick="getCourses()" class="line">
+		Find Courses
+		</button>
+
+		<div id="output_area">
+			<textarea id = "outputText">
+			</textarea>
+
+			<p id = "output">Hello my name is frank
+			</p>
+
+			<p id= "testing">Stuff should go here
+			</p>
+
+			<p ID = "testing2" class="line"> THIS IS A TEST
+			</p>
+
+			<p id="testing3"> TIHS IS TESTING3
+			</p>
+
+			<a href="https://www.google.com" target="_blank" class="important"> THIS IS A LINK! </a>
+
+			<a href="https://www.miniclip.com" target="_blank" class="important"> THIS IS A TEST OF A LINK </a>
+
+		</div>
+
+	</body>
+
+</html>
