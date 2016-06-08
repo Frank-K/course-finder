@@ -40,7 +40,7 @@ function findPrereqs(userCourses, courseData){
 			for (p = 0; p < userCourses.length; p++){
 
 				// Makes sure the course has not already been added and that the user has one of the prereq's
-				if ((possibleCourses.indexOf(cur) == -1) && (courseData[i].prerequisites.indexOf(userCourses[p]) != -1)){
+				if ((possibleCourses.indexOf(cur) == -1) && (courseData[i].prerequisites.indexOf(userCourses[p]) != -1) && (userCourses[p] != '')){
 					//possibleText = possibleText.concat(cur);
 					//possibleText = possibleText.concat("<br>");
 					possibleText = possibleText.concat(buildText(cur, courseData[i]));
