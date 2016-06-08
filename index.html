@@ -5,27 +5,33 @@
 
 		<title>EXPLR Course Finder</title>
 
+		<meta charset="utf-8">
+		<meta name="description" content="A tool for finding new courses to take">
+		<meta name="keywords" content="uoft, university of toronto, courses, course finder, prerequisite finder, prerequisite, course elegibility">
+		<meta name="author" content="Frank Karunaratna">
+
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script type="text/javascript" src="course-finder.js"></script>
+		<link href="https://raw.githubusercontent.com/Frank-K/course-finder/gh-pages/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
 		<style>
-		@import url(https://fonts.googleapis.com/css?family=Lobster|Pacifico);
-		@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:300,400);
+		@import url(https://fonts.googleapis.com/css?family=Lobster);
+		@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,500);
 
 
 		#header {
 			font-family: 'Lobster', cursive;
 			font-weight: 400;
-			background-color: black;
+			font-size: x-large;
+			background-color: #22B0F7;
 			color: white;
 			text-align: center;
+			text-shadow: 4px 4px 2px rgba(150, 150, 150, 1);
 			
-			padding-top: 5px;
-			padding-bottom: 5px;
+			padding-top: 1px;
+			padding-bottom: 1px;
 
-			margin-top: 0;
-			margin-right: 0;
-			margin-left: 0;
+			
 
 		}
 
@@ -33,14 +39,17 @@
 			background-color: black;
 			color: white;
 			text-align: center;
-			padding: 5px;
+			padding-top: 5px;
+			padding-bottom: 0px;
 			font-size: x-small;
+			background-color: #22B0F7;
+			text-shadow: 4px 4px 2px rgba(150, 150, 150, 1);
 
 			position: absolute;
 			bottom: 0;
 			left: 0;
 			right: 0;
-			height: 50px;
+			height: 40px;
 			width: 100%;
 		}
 
@@ -61,8 +70,8 @@
 
 		#button {
 			background-color: white;
-			color: black;
-			border: 2px solid #4CAF50;
+			color: #666666;
+			border: 2px solid #279DD9;
 			padding: 16px 32px;
 			text-align: center;
 			display: inline-block;
@@ -72,15 +81,35 @@
 			transition-duration: 0.5s;
 			cursor: pointer;
 
+			font-family: 'Roboto Slab', serif;
+			font-weight: 400;
 		}
 
 		#button:hover{
-			background-color: #4CAF50;
+			background-color: #44BBF8;
+			border: 2px solid #228CC1;
 			color: white;
+			font-family: 'Roboto Slab', serif;
+			font-weight: 400;
+			text-shadow: 4px 4px 2px rgba(150, 150, 150, 1);
 		}
 
-		a.important {
-			color: green;
+		.important {
+			color: #44BBF8;
+			text-shadow: 2px 2px 2px rgba(150, 150, 150, 1);
+			text-decoration: none;
+
+			-webkit-transition-duration: 0.3s;
+			transition-duration: 0.3s;
+
+		}
+
+		.important:hover{
+			-webkit-transition-duration: 0.3s;
+			transition-duration: 0.3s;
+
+			color: #44BBF8;
+			text-shadow: 2px 2px 2px rgb(100, 100, 100);
 		}
 
 		.line{
@@ -98,7 +127,7 @@
 		}	
 
 		#the_button{
-			padding-top: 190px;
+			padding-top: 130px;
 		}
 
 		html{
@@ -110,10 +139,15 @@
 		}
 
 		.pageContent{
-			margin-bottom: 50px
+			margin-bottom: 40px
 		}
 
-		#warning{
+		#warning1{
+			font-family: 'Roboto Slab', serif;
+			font-weight: 500;
+		}
+
+		#warning2{
 			font-family: 'Roboto Slab', serif;
 			font-weight: 400;
 		}
@@ -128,9 +162,13 @@
 
 			margin: 0;
 			padding: 0;
+			background-color: #FFFFFF;
 		}
 
-
+		#testing2{
+			font-family: 'Roboto Slab', serif;
+			font-weight: 400;
+		}
 		</style>
 
 	</head>
@@ -138,23 +176,26 @@
 	<body>
 
 		<header id="header">
-			<h1>EXPLR Course Finder</h1>
+			<h1>build upon - A Course Finder</h1>
 		</header>
 	
 		<div class="pageContent">
 				
 
 				<div id="input_area" class="line">
-					<p id="inputText"> Enter the courses you have taken using spaces to seperate them </p>
-					<textarea id="input" cols="54" rows="20" placeholder="MAT135 MAT136 MAT137 ..."></textarea>
+					<p id="inputText"> Enter the courses you have taken using commas to seperate them </p>
+					<textarea id="input" cols="54" rows="20" placeholder="MAT135, MAT136, MAT137, ..."></textarea>
 				</div>
 
 				<div id="the_button" class="line">
+
+					<p id="warning1">This tool uses the courses you have already taken to find new possible courses that you could take.</p>
+
 					<button id="button" onclick="getCourses()">
 					Find Courses
 					</button>
 
-					<p id="warning">Please double-check all prerequisites, corequisites and exclusions with the course calander.
+					<p id="warning2">Please double-check all prerequisites, corequisites and exclusions with the course calander.
 					Courses shown are only suggestions.
 					This tool only works with courses at the St. George campus of the University of Toronto.</p>
 				</div>
