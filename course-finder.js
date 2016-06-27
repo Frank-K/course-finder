@@ -72,7 +72,7 @@ function buildText(courseCode, courseDict){
 
 	var textLink = "http://calendar.artsci.utoronto.ca/crs_"+ linkCode +".htm#" + courseCode;
 
-	newText = newText.concat('<font size="6"><b><a href=' + textLink + ' target="_blank" class="important">' + courseCode + '</a></b></font>');
+	newText = newText.concat('<span class="hint--top" aria-label="Click me to go to the course calendar"><font size="6"><b><a href=' + textLink + ' target="_blank" class="important">' + courseCode + '</a></b></font></span>');
 	newText = newText.concat('<br>');
 	newText = newText.concat('<font size="5">' + courseDict.name + '</font>');
 	newText = newText.concat('<br>');
